@@ -67,6 +67,8 @@ function App() {
   }
 
   const handleCopy = async () => {
+
+    if(!pwdGen) alert('No password to copy');
     // Copy the password to the clipboard
     await navigator.clipboard.writeText(pwdGen);
     alert('Copied to clipboard!');
@@ -83,30 +85,30 @@ function App() {
         </div>
 
         <form>
-          <div className="flex justify-between mb-4 flex items-center">
-            <label htmlFor="length" className="text-white font-thin text-sm">Password Length</label>
+          <div className="flex justify-between mb-4 items-center">
+            <label htmlFor="length" className="text-white p-4 font-thin text-sm">Password Length</label>
             <input type="number" min={8} className="rounded w-[30%] px-2" name="length" value={pwdLen} onChange={(e) => {
               setPwdLen(parseInt(e.target.value));
 
             }} />
           </div>
-          <div className="flex justify-between mb-4">
+          <div className="flex justify-between mb-4 p-4 hover:bg-slate-600 transition-colors">
             <label htmlFor="uppercase" className="text-white font-thin text-sm">Include Uppercase Letters (A-Z)</label>
             <input type="checkbox" name="uppercase" checked={upperCheck} onChange={handleUpper} />
           </div>
-          <div className="flex justify-between mb-4">
+          <div className="flex justify-between mb-4 p-4 hover:bg-slate-600 transition-colors">
             <label htmlFor="lowercase" className="text-white font-thin text-sm">Include Lowercase Letters (a-z)</label>
             <input type="checkbox" name="lowercase" checked={lowerCheck} onChange={handleLower} />
           </div>
-          <div className="flex justify-between mb-4">
+          <div className="flex justify-between mb-4 p-4 hover:bg-slate-600 transition-colors">
             <label htmlFor="numbers" className="text-white font-thin text-sm">Include Numbers (0-9)</label>
             <input type="checkbox" name="numbers" checked={numbersCheck} onChange={handleNumbers} />
           </div>
-          <div className="flex justify-between mb-8">
+          <div className="flex justify-between mb-8 p-4 hover:bg-slate-600 transition-colors">
             <label htmlFor="symbols" className="text-white font-thin text-sm">Include Symbols ($=\!)</label>
             <input type="checkbox" name="symbols" checked={symbolsCheck} onChange={handleSymbols} />
           </div>
-          <button className="bg-yellow-500 rounded font-semibold p-4 w-full" type="submit" onClick={handleForm}>Generate Password</button>
+          <button className="bg-yellow-500 hover:bg-yellow-400 transition-colors rounded font-semibold p-4 w-full" type="submit" onClick={handleForm}>Generate Password</button>
         </form>
       </div>
     </div>
