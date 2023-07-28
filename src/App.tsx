@@ -76,7 +76,7 @@ function App() {
 
   return (
     <div className="h-screen w-full flex flex-col justify-center items-center bg-slate-900">
-      <div className="p-8 shadow-md rounded-xl bg-sky-950">
+      <div className="p-8 shadow-md rounded-xl bg-sky-950 w-[75%] md:w-[50%] lg:w-[35%] xl:w-[25%]">
         <div className="mb-8 flex items-center justify-between bg-slate-300 rounded overflow-hidden">
           <span className="px-4">{pwdGen}</span>
           <div className="bg-yellow-500 p-4">
@@ -86,7 +86,7 @@ function App() {
 
         <form>
           <div className="flex justify-between mb-4 p-4 items-center">
-            <label htmlFor="length" className="text-white p-4 font-thin text-sm">Password Length</label>
+            <label htmlFor="length" className="text-white font-thin text-sm">Password Length</label>
             <input type="number" min={8} className="rounded w-[30%] px-2" name="length" value={pwdLen} onChange={(e) => {
               setPwdLen(parseInt(e.target.value));
 
