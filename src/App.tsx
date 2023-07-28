@@ -47,7 +47,7 @@ function App() {
       alert("Please check at least one checkbox to generate a password.");
       return;
     }
-    
+
     if (upperCheck) chosenCharaters += upperLetters;
     if (lowerCheck) chosenCharaters += lowerLetters;
     if (numbersCheck) chosenCharaters += numbers;
@@ -68,7 +68,7 @@ function App() {
 
   const handleCopy = async () => {
 
-    if(!pwdGen) alert('No password to copy');
+    if (!pwdGen) alert('No password to copy');
     // Copy the password to the clipboard
     await navigator.clipboard.writeText(pwdGen);
     alert('Copied to clipboard!');
@@ -85,7 +85,7 @@ function App() {
         </div>
 
         <form>
-          <div className="flex justify-between mb-4 items-center">
+          <div className="flex justify-between mb-4 p-4 items-center">
             <label htmlFor="length" className="text-white p-4 font-thin text-sm">Password Length</label>
             <input type="number" min={8} className="rounded w-[30%] px-2" name="length" value={pwdLen} onChange={(e) => {
               setPwdLen(parseInt(e.target.value));
