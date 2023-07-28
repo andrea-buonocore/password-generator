@@ -39,7 +39,7 @@ function App() {
   const handleNumbers = () => setNumbersCheck(!numbersCheck);
   const handleSymbols = () => setSymbolsCheck(!symbolsCheck);
 
-  const handleForm = (e) => {
+  const handleForm = (e: { preventDefault: () => void; }) => {
 
     e.preventDefault();
 
