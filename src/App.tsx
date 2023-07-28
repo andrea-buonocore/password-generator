@@ -79,7 +79,7 @@ function App() {
       <div className="p-8 shadow-md rounded-xl bg-sky-950 w-[75%] md:w-[50%] lg:w-[35%] xl:w-[25%]">
         <div className="mb-8 flex items-center justify-between bg-slate-300 rounded overflow-hidden">
           <span className="px-4">{pwdGen}</span>
-          <div className="bg-yellow-500 p-4">
+          <div className="bg-yellow-500 hover:bg-yellow-400 transition-colors  p-4">
             <BiCopy size={20} onClick={handleCopy} className="cursor-pointer" />
           </div>
         </div>
@@ -89,7 +89,6 @@ function App() {
             <label htmlFor="length" className="text-white font-thin text-sm">Password Length</label>
             <input type="number" min={8} className="rounded w-[30%] px-2" name="length" value={pwdLen} onChange={(e) => {
               setPwdLen(parseInt(e.target.value));
-
             }} />
           </div>
           <div className="flex justify-between mb-4 p-4 hover:bg-slate-600 transition-colors">
